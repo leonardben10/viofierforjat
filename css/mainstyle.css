@@ -4,22 +4,50 @@
     box-sizing:border-box;
 }
 
+
+
 body{
     background-color:#292929;
+    scrollbar-width: none;
+    body::-webkit-scrollbar {
+        width: 0; /* Ascunde scrollbar-ul */
+        background: transparent; /* Fundal transparent */
+    }
 }
 
 /* Intro */
-.intro{
-    position:fixed;
-    z-index:4;
-    left:0;
-    top:0;
-    width:100%;
-    height:100vh;
-    background-image:url(../images/intro.jpg);
-    background-size:cover;
+.intro {
+    scrollbar-width: none;
+    body::-webkit-scrollbar {
+        width: 0; /* Ascunde scrollbar-ul */
+        background: transparent; /* Fundal transparent */
+    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Pentru a avea un fundal uniform */
+    display: flex;
+    justify-content: center;
+   
+    z-index: 10;
+    animation: slideUp 7s forwards;
+}
+
+.intro-img {
+    max-width: 100%;
+    max-height: 100%;
     
-    transition:1s;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
 }
 
 .hero .heroLogo{
@@ -33,28 +61,6 @@ body{
     top:40%;
     left:50%;
     transform:translate(-50%,-50%);
-}
-
-.intro .logo{
-    position:relative;
-    display:inline-block;
-    bottom:-7rem;
-    z-index:5;
-    width:50vh;
-    opacity:0;
-    filter:invert(100%) drop-shadow(0px 0px 5px rgb(0 0 0 / 0.8));
-}
-
-.intro .logo.active{
-    bottom:0;
-    opacity:1;
-    transition: ease-in-out 0.6s;
-}
-
-.intro .logo.fade{
-    bottom:150px;
-    opacity:0;
-    transition: ease-in-out 0.5s;
 }
 
 /* Header */
@@ -444,6 +450,17 @@ body{
 
 @media(max-width:990px)
 {
+    .intro {
+        height: auto; /* Înălțimea devine automată */
+        background-color: transparent; /* Fundal transparent pe mobil */
+    }
+
+    .intro-img {
+        width: auto; /* Lasă imaginea la dimensiunea ei naturală */
+        height: auto;
+        max-width: none;
+        max-height: none;
+    }
     .innerheader .logo img{
         height:30px;
     }

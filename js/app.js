@@ -1,12 +1,16 @@
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        document.body.classList.add("ready");
+    }, 4000); // După 2 secunde
+});
 let cookiebox = document.querySelector(".corner")
 document.getElementById("understood").addEventListener('click',()=>{
     cookiebox.style.transform = "translateY(45px)"
-})
-
 let intro = document.querySelector('.intro')
 let logo = document.querySelector('.logo-header')
 let logoSpan = document.querySelectorAll('.logo');
-
+})
+const logoSpan = document.querySelectorAll('.logo span');
 window.addEventListener('DOMContentLoaded',()=> {
     setTimeout(()=> {
         logoSpan.forEach((span,idx)=> {
@@ -14,7 +18,7 @@ window.addEventListener('DOMContentLoaded',()=> {
                 span.classList.add('active');
             },(idx+1)*400)
         });
-
+const logoSpan = document.querySelectorAll('.logo span');
         setTimeout(()=>{
             logoSpan.forEach((span,idx)=>{
                 setTimeout(()=> {
